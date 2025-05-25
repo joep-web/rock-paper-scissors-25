@@ -1,0 +1,14 @@
+@mixin hover-scale($factor: 1.1) {
+  transition: transform 200ms ease-in-out;
+  
+  &:hover {
+    transform: scale($factor);
+  }
+}
+
+@mixin flex-center($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}

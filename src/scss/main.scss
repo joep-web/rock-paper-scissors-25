@@ -1,0 +1,131 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+@import url(v.$fonts-url);
+
+
+html {
+  overflow: hidden;
+  font-size: 96.5%;
+  height: 100%;
+}
+
+body {
+  @include m.flex-center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: v.$bg-color;
+  font-family: v.$text-font, sans-serif;
+  color: v.$primary;
+}
+
+// sa mga fonts
+h1 {
+  font: {
+    size: 2rem;
+    family: v.$heading-font;
+  }
+}
+
+p, .rounds {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: v.$primary;
+  font-size: 1.5rem;
+}
+
+// Game components
+.rounds {
+  font-size: 2rem;
+  height: 100px;
+}
+
+.answers {
+  background-color: v.$primary;
+  width: 12rem;
+  height: 13rem;
+  border-radius: 14px;
+}
+
+.answers-cont {
+  width: 100%;
+  @include m.flex-center(row);
+  gap: 10%;
+  margin-bottom: 1.5rem;
+
+  div {
+    @include m.flex-center;
+  }
+
+  p {
+    width: 100%;
+    padding-left: 10%;
+    margin: 0;
+  }
+}
+
+.choices-cont {
+  @include m.flex-center;
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 3rem;
+
+  div {
+    width: 100%;
+    @include m.flex-center(row);
+    margin: 1%;
+  }
+
+  .c {
+    @include m.flex-center(row);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 14px;
+    @include m.hover-scale;
+
+    img {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+  }
+
+  .rock { background-color: #ED3B32; }
+  .paper { background-color: #1EA4E6; }
+  .scissors { background-color: #4CD964; }
+}
+
+button {
+  font: {
+    family: "Press Start 2P", sans-serif;
+    size: 1rem;
+    
+  }
+  padding: 1rem;
+  color: v.$bg-color;
+  background-color: v.$primary;
+  height: 5rem;
+  width: 8rem;
+  border-radius: 11px;
+  border: none;
+  @include m.hover-scale;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: min(70%, 600px);
+  @include m.flex-center(row);
+  justify-content: space-around;
+
+  a {
+    font-size: 1.4rem;
+    width: 30%;
+    @include m.flex-center(row);
+    gap: 4%;
+  }
+}
