@@ -1,5 +1,6 @@
 @use 'variables' as v;
 @use 'mixins' as m;
+@use "sass:color";
 
 @import url(v.$fonts-url);
 
@@ -128,4 +129,141 @@ footer {
     @include m.flex-center(row);
     gap: 4%;
   }
+}
+
+
+
+// splash intro msg
+
+.splash-message {
+  @include m.flex-center(column);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(v.$bg-color, 0.95);
+  z-index: 9;
+  animation: fadeOut 1s ease 2.5s forwards;
+  pointer-events: none;
+
+  .splash-text {
+    font-family: v.$heading-font;
+    color: v.$primary;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: textGlow 2s ease-in-out infinite;
+  }
+
+  .splash-subtext {
+    font-family: v.$text-font, sans-serif;
+    color: color.scale(v.$primary, $lightness: 10%);
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 10px v.$primary; }
+  50% { text-shadow: 0 0 20px rgba(v.$primary, 0.8); }
+}
+
+.gray-overlay {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  opacity: 80%;
+}
+
+.name-cont {
+    z-index: 6;
+    background-color: v.$primary;
+    color: v.$bg-color;
+    @include m.flex-center();
+    position: fixed;
+    width: 34rem;
+    height: 16rem;
+    padding: 1rem 0;
+    border-radius: 14px;
+
+    h1 {
+      text-align: center;
+      color: #b2967d;
+      margin: 1.5rem 0;
+    }
+
+    input[type="text"] {
+        height: 2.5rem;
+        width: 15rem;
+        border: 1px solid v.$bg-color;
+        padding: 1rem;
+        font-family: v.$text-font;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+
+        &:focus {
+          outline:none;
+          border: 3px solid v.$bg-color;
+        }
+    }
+
+    button {
+      border: 1px solid v.$bg-color;
+      height: 3rem;
+      width: 6rem;
+    }
+}
+
+@media (max-width: 490px) {
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p, .rounds {
+    font-size: 1.2rem;
+  }
+
+  .name-cont {
+    width: 15rem;
+    height: auto;
+    margin: 0;
+
+    input[type="text"] {
+      width: 8rem;
+      height: 1.7rem;
+    }
+  }
+
+  .answers {
+    width: 8rem;
+    height: 9rem;
+  }
+  
+  button {
+    height: 3rem;
+    width: 6rem;
+    font-size: .9rem;
+    text-align: center;
+  }
+
+  footer {
+    width: 90%;
+    font-size: 0.9rem;
+
+    a {
+      width: 40%;
+    }
+  }
+
 }

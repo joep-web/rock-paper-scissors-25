@@ -146,3 +146,131 @@ footer a {
   justify-content: center;
   gap: 4%;
 }
+
+.splash-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(115, 135, 123, 0.95);
+  z-index: 9;
+  animation: fadeOut 1s ease 2.5s forwards;
+  pointer-events: none;
+}
+.splash-message .splash-text {
+  font-family: "Rubik Doodle Shadow";
+  color: #F7FFF7;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: textGlow 2s ease-in-out infinite;
+}
+.splash-message .splash-subtext {
+  font-family: Jaro, sans-serif;
+  color: rgb(247.8, 255, 247.8);
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #F7FFF7;
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(247, 255, 247, 0.8);
+  }
+}
+.gray-overlay {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  opacity: 80%;
+}
+
+.name-cont {
+  z-index: 6;
+  background-color: #F7FFF7;
+  color: #73877b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 34rem;
+  height: 16rem;
+  padding: 1rem 0;
+  border-radius: 14px;
+}
+.name-cont h1 {
+  text-align: center;
+  color: #b2967d;
+  margin: 1.5rem 0;
+}
+.name-cont input[type=text] {
+  height: 2.5rem;
+  width: 15rem;
+  border: 1px solid #73877b;
+  padding: 1rem;
+  font-family: Jaro;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+.name-cont input[type=text]:focus {
+  outline: none;
+  border: 3px solid #73877b;
+}
+.name-cont button {
+  border: 1px solid #73877b;
+  height: 3rem;
+  width: 6rem;
+}
+
+@media (max-width: 490px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  p, .rounds {
+    font-size: 1.2rem;
+  }
+  .name-cont {
+    width: 15rem;
+    height: auto;
+    margin: 0;
+  }
+  .name-cont input[type=text] {
+    width: 8rem;
+    height: 1.7rem;
+  }
+  .answers {
+    width: 8rem;
+    height: 9rem;
+  }
+  button {
+    height: 3rem;
+    width: 6rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  footer {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+  footer a {
+    width: 40%;
+  }
+}

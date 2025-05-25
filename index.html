@@ -7,17 +7,27 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div class="gray-overlay"></div>
+    <div class="name-cont">
+        <h1>What's your name warrior?</h1>
+        <input type="text" placeholder="Enter here" id="name-area">
+        <button id="start">Play</button>
+    </div>
+    <div class="splash-message">
+        <p class="splash-text">ROCK PAPER SCISSORS</p>
+        <p class="splash-subtext">A simple battle of wits<br>Made by joeprey</p>
+    </div>
     <header>
         <h1>Rock Paper Scissors</h1>
     </header>
-    <div class="rounds"><p class="rounds">Round: </p></div>
+    <div class="rounds"><p class="roundsS">Round: </p></div>
     <div class="answers-cont">
         <div>
-            <p>Your Score: </p>
+            <p id="my-score">Your Score: </p>
             <div class="answers" id="hResult"></div>
         </div>
         <div>
-            <p>Enemy's Score: </p>
+            <p id="en-score">Enemy's Score: </p>
             <div class="answers" id="cResult"></div>
         </div>
     </div>
@@ -27,11 +37,12 @@
             <div class="paper c"><img src="src\icons\ui\paper.svg" alt="paper"></div>
             <div class="scissors c"><img src="src\icons\ui\scissors.svg" alt="scissors"></div>
         </div>
-        <button>Shoot</button>
+        <button id="shoot-hand">Shoot</button>
     </div>
     
     <footer>
         <a href="https://github.com/joep-web">joep-web<img src="src\icons\ui\github.svg" width="25px" height="25px"/></a>
     </footer>
+    <script src="src\js\index.js"></script>
 </body>
 </html>
