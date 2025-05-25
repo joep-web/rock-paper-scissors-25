@@ -40,6 +40,10 @@ a {
 }
 
 // Game components
+.gray-overlay, .name-cont {
+  transition: all 200ms ease-in-out;
+}
+
 .rounds {
   font-size: 2rem;
   height: 100px;
@@ -132,7 +136,6 @@ footer {
 }
 
 
-
 // splash intro msg
 
 .splash-message {
@@ -165,14 +168,6 @@ footer {
   }
 }
 
-@keyframes fadeOut {
-  to { opacity: 0; }
-}
-
-@keyframes textGlow {
-  0%, 100% { text-shadow: 0 0 10px v.$primary; }
-  50% { text-shadow: 0 0 20px rgba(v.$primary, 0.8); }
-}
 
 .gray-overlay {
   z-index: 5;
@@ -203,7 +198,7 @@ footer {
     }
 
     input[type="text"] {
-        height: 2.5rem;
+        height: 2rem;
         width: 15rem;
         border: 1px solid v.$bg-color;
         padding: 1rem;
@@ -224,7 +219,7 @@ footer {
     }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 570px) {
 
   h1 {
     font-size: 1.5rem;
@@ -266,4 +261,18 @@ footer {
     }
   }
 
+}
+
+
+.fade-out {
+  animation: fadeOut 500ms ease 150ms forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 10px v.$primary; }
+  50% { text-shadow: 0 0 20px rgba(v.$primary, 0.8); }
 }

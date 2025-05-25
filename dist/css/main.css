@@ -33,6 +33,10 @@ a {
   font-size: 1.5rem;
 }
 
+.gray-overlay, .name-cont {
+  transition: all 200ms ease-in-out;
+}
+
 .rounds {
   font-size: 2rem;
   height: 100px;
@@ -178,19 +182,6 @@ footer a {
   line-height: 1.5;
 }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-  }
-}
-@keyframes textGlow {
-  0%, 100% {
-    text-shadow: 0 0 10px #F7FFF7;
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(247, 255, 247, 0.8);
-  }
-}
 .gray-overlay {
   z-index: 5;
   position: fixed;
@@ -222,7 +213,7 @@ footer a {
   margin: 1.5rem 0;
 }
 .name-cont input[type=text] {
-  height: 2.5rem;
+  height: 2rem;
   width: 15rem;
   border: 1px solid #73877b;
   padding: 1rem;
@@ -240,7 +231,7 @@ footer a {
   width: 6rem;
 }
 
-@media (max-width: 490px) {
+@media (max-width: 570px) {
   h1 {
     font-size: 1.5rem;
   }
@@ -272,5 +263,22 @@ footer a {
   }
   footer a {
     width: 40%;
+  }
+}
+.fade-out {
+  animation: fadeOut 500ms ease 150ms forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #F7FFF7;
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(247, 255, 247, 0.8);
   }
 }
