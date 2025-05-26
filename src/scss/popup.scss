@@ -1,0 +1,58 @@
+.round-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 40px 60px;
+    border-radius: 20px;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    z-index: 1000;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    animation: roundPopup 2s ease-out forwards;
+}
+
+@keyframes roundPopup {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(3) rotate(-5deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2) rotate(2deg);
+    }
+
+    40% {
+        transform: translate(-50%, -50%) scale(0.9) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) scale(1.1) rotate(0.5deg);
+    }
+
+    80% {
+        transform: translate(-50%, -50%) scale(0.95) rotate(0deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+}
+
+.round-popup.hide {
+    animation: hidePopup 0.5s ease-in forwards;
+}
+
+@keyframes hidePopup {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}

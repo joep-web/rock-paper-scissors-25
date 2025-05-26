@@ -1,5 +1,6 @@
 @use 'variables' as v;
 @use 'mixins' as m;
+@use 'popup';
 @use "sass:color";
 
 @import url(v.$fonts-url);
@@ -265,7 +266,7 @@ footer {
 
 
 .fade-out {
-  animation: fadeOut 500ms ease 150ms forwards;
+  animation: fadeOut 500ms ease 100ms forwards;
 }
 
 @keyframes fadeOut {
