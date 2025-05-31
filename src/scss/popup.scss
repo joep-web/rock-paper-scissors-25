@@ -1,11 +1,13 @@
+@use 'variables' as v;
+
 .round-popup {
     position: fixed;
-    top: 50%;
+    top: 50%; // here
     left: 50%;
     transform: translate(-50%, -50%) scale(3);
-    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24); // here 
     color: white;
-    padding: 40px 60px;
+    padding: 40px 60px; // here
     border-radius: 20px;
     font-size: 4rem;
     font-weight: bold;
@@ -48,6 +50,30 @@
 
 .round-popup.hide {
     animation: hidePopup 0.5s ease-in forwards;
+}
+
+
+@mixin popText($tp, $gd1, $gd2, $pd: 10px) {
+    top: $tp;
+    background: linear-gradient(45deg, $gd1, $gd2);
+    padding: $pd;
+}
+
+.round-popup.Rock {
+    @include popText(calc(50% - 7.2rem), #74b9ff, #0984e3)
+}
+
+.round-popup.Paper {
+   @include popText(50%, #00b894, #00a085)
+}
+
+.round-popup.Scissors {
+    @include popText(calc(50% + 7.2rem),  #fdcb6e, #e17055)
+}
+
+.round-popup.Shoot {
+    @include popText(50%,#e84393, #fd79a8, 25px 45px);
+    font-family: v.$heading-font;
 }
 
 @keyframes hidePopup {
