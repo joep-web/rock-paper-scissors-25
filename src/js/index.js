@@ -281,10 +281,10 @@ const getComputerChoice = () => {
         displayChoice("r", "#cResult")
     } else if (r === 1) {
         comResult = "p"
-        displayChoice("r", "#cResult")
+        displayChoice("p", "#cResult")
     } else {
         comResult = "s"
-        displayChoice("r", "#cResult")
+        displayChoice("s", "#cResult")
     }
 
     Winner(comResult)
@@ -318,4 +318,6 @@ const Winner = r => {
 
     clickedChoices = false
 }
+
+console.log("bat iba")
 
