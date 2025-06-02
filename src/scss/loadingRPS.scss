@@ -1,0 +1,162 @@
+// Direct loading styles for cResult div
+#cResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+  position: relative;
+  
+  // Loading image styles when directly inside cResult
+  .loading-img {
+    border-radius: 15px;
+    width: 75px;
+    height: 75px;
+    animation: spin 1s linear infinite;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    
+    // Different sizes
+    &.small {
+      width: 50px;
+      height: 50px;
+    }
+    
+    &.large {
+      width: 80px;
+      height: 80px;
+    }
+    
+    // Fade in animation
+    &.fade-in {
+      animation: fadeIn 0.3s ease-in-out, spin 1s linear infinite;
+    }
+    
+    // Fade out animation
+    &.fade-out {
+      animation: fadeOut 0.3s ease-in-out;
+    }
+  }
+  
+  // When loading state is active
+  &.loading {
+    // Ensure proper centering during loading
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Spinning animation
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Fade animations
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+// Alternative animations for variety
+#cResult .loading-img {
+  // Pulsing animation
+  &.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  
+  // Bouncing animation
+  &.bounce {
+    animation: bounce 1s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  40% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+  60% {
+    transform: translateY(-5px) rotate(270deg);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  #cResult {
+    min-height: 70px;
+    
+    .loading-img {
+      width: 50px;
+      height: 50px;
+      
+      &.small {
+        width: 35px;
+        height: 35px;
+      }
+      
+      &.large {
+        width: 65px;
+        height: 65px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #cResult {
+    min-height: 60px;
+    
+    .loading-img {
+      width: 50px;
+      height: 50px;
+      
+      &.small {
+        width: 30px;
+        height: 30px;
+      }
+      
+      &.large {
+        width: 55px;
+        height: 55px;
+      }
+    }
+  }
+}

@@ -7,6 +7,9 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div id="slideMessage" class="slide-message">
+        Please choose a RPS choice first
+    </div>
     <div class="gray-overlay"></div>
     <div class="name-cont">
         <h1>What's your name warrior?</h1>
@@ -24,18 +27,18 @@
     <div class="answers-cont">
         <div>
             <p id="my-score">Your Score: <span>0</span></p>
-            <div class="answers" id="hResult"></div>
+            <div class="answers" id="hResult"><p>Your Hand</p></div>
         </div>
         <div>
             <p id="en-score">Enemy's Score: <span>0</span></p>
-            <div class="answers" id="cResult"></div>
+            <div class="answers" id="cResult"><p>Enemy's Hand</p></div>
         </div>
     </div>
      <div class="choices-cont">
         <div>
-            <div class="rock c"><img src="src\icons\ui\rock.svg" alt="rock"></div>
-            <div class="paper c"><img src="src\icons\ui\paper.svg" alt="paper"></div>
-            <div class="scissors c"><img src="src\icons\ui\scissors.svg" alt="scissors"></div>
+            <div class="rock c" id="r"><img src="src\icons\ui\rock.svg" alt="rock"></div>
+            <div class="paper c" id="p"><img src="src\icons\ui\paper.svg" alt="paper"></div>
+            <div class="scissors c" id="s"><img src="src\icons\ui\scissors.svg" alt="scissors"></div>
         </div>
         <button id="shoot-hand">Shoot</button>
     </div>

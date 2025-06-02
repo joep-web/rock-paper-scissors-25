@@ -1,7 +1,9 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 @use 'popup';
+@use 'loadingRPS';
 @use "sass:color";
+@use 'slideNoRPSChoice';
 
 @import url(v.$fonts-url);
 
@@ -34,6 +36,7 @@ p, .rounds {
   font-size: 1.5rem;
 }
 
+
 a {
   text-decoration: none;
   color: v.$primary;
@@ -48,6 +51,7 @@ a {
 .rounds {
   font-size: 2rem;
   height: 100px;
+  @include m.flex-center
 }
 
 .answers {
@@ -96,8 +100,10 @@ a {
     img {
       width: 2.6rem;
       height: 2.6rem;
+      pointer-events: none;
     }
   }
+  
 
   .rock { background-color: #ED3B32; }
   .paper { background-color: #1EA4E6; }
@@ -264,6 +270,11 @@ footer {
 
 }
 
+.answers > p {
+    color: black;
+    padding-left: 0;
+    text-align: center;
+}
 
 .fade-out {
   animation: fadeOut 500ms ease 100ms forwards;
@@ -276,4 +287,9 @@ footer {
 @keyframes textGlow {
   0%, 100% { text-shadow: 0 0 10px v.$primary; }
   50% { text-shadow: 0 0 20px rgba(v.$primary, 0.8); }
+}
+
+.img-res {
+  width: 7rem;
+  height: 7rem;
 }
